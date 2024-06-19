@@ -1,682 +1,480 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yash Shah's Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-
-        body {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .navbar {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-image: linear-gradient(90deg, #74D7BB, #53C8B6, #35A99C);
-            background-color: transparent;
-        }
-
-        .logo {
-            padding: 0 5rem;
-        }
-
-        .logo .logo-heading {
-            color: #fff;
-        }
-
-        .menu {
-            padding: 0 5rem;
-        }
-
-        .hamburger {
-            display: none;
-            color: #fff;
-            font-size: 25px;
-        }
-
-        .cross-icon {
-            display: none;
-        }
-
-        .menu .menu-list {
-            display: flex;
-            list-style: none;
-        }
-
-        .menu-list .menu-list-items {
-            padding: 0.5rem 1rem;
-        }
-
-        @media screen and (min-width: 856px) and (max-width: 1024px) {
-            .menu-list .menu-list-items {
-                padding: 0.5rem 0.3rem;
-            }
-        }
-
-        .hero {
-            background-image: url('./Images/heroImg3.avif');
-            background-repeat: no-repeat;
-            background-size: 100% 100%;
-            width: 100%;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: start;
-            margin: 4.8rem 0;
-        }
-
-        .hero .intro {
-            text-align: center;
-            margin: 0 5rem;
-        }
-
-        .hero .intro-buttons {
-            margin: 2rem 0;
-            display: flex;
-            align-items: center;
-            justify-content: space-evenly;
-        }
-
-        .about,
-        .technical-knowledge,
-        .work-experience,
-        .projects,
-        .courses {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-image: linear-gradient(45deg, #363D73, #2794B3);
-            color: #fff;
-            width: 100%;
-            padding: 2rem 5rem;
-        }
-
-        .about-text,
-        .technical-knowledge-text,
-        .work-experience-text,
-        .projects-text,
-        .courses-text {
-            width: 100%;
-            padding: 1rem 0;
-        }
-
-        .portfolio {
-            margin: 4.8rem 0;
-            padding: 0 5rem;
-        }
-
-        .port-card {
-            padding: 0 !important;
-            background: none !important;
-            border: 2px solid #000;
-        }
-
-        .port-card .image {
-            width: 100%;
-        }
-
-        .port-card .image img {
-            height: 200px;
-            width: 100%;
-            border-top-right-radius: 20px;
-            border-top-left-radius: 20px;
-        }
-
-        .services {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            margin: 4.8rem 0;
-            padding: 0 5rem;
-        }
-
-        .my-row {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin: 2rem 0;
-        }
-
-        .my-row .my-col {
-            text-align: center;
-            width: 30%;
-        }
-
-        .my-card {
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            border-radius: 20px;
-            background-image: linear-gradient(#74D7BB, #53C8B6, #35A99C);
-            padding: 1rem;
-        }
-
-        .icon {
-            height: 100px;
-            width: 100px;
-            border-radius: 50%;
-            background-color: #363D73;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .icon svg {
-            font-size: 30px;
-            color: #fff;
-        }
-
-        .contact {
-            padding: 0 5rem;
-        }
-
-        .contact-content {
-            display: flex;
-            margin: 3rem 0;
-            justify-content: space-between;
-        }
-
-        .contact-form-container {
-            width: 50%;
-        }
-
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .contact-form .form-controls {
-            width: 80%;
-            padding: 10px 0;
-            margin: 1.67rem 0;
-        }
-
-        .contact-form .form-btn {
-            width: 83%;
-        }
-
-        .contact-details {
-            width: 50%;
-        }
-
-        .footer {
-            background-color: #000;
-            color: #fff;
-            padding: 2rem;
-        }
-
-        .footer-list-items {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 50px;
-            width: 50px;
-            margin: 1rem 1rem 0 1rem;
-            border-radius: 50%;
-            background-color: #53C8B6;
-        }
-
-        .footer-links {
-            font-size: 24px;
-            color: #fff;
-            text-decoration: none;
-        }
-
-        .social-links {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .footer-menu {
-            padding: 0 5rem;
-        }
-
-        .footer-menu .footer-menu-list {
-            display: flex;
-            list-style: none;
-        }
-
-        .greet-heading {
-            font-size: 1.3rem;
-            font-weight: lighter;
-            margin: 0;
-            letter-spacing: 1px;
-        }
-
-        .my-heading {
-            font-size: 2.5rem;
-            margin: 0;
-        }
-
-        .sub-heading {
-            margin: 0;
-            font-size: 0.8rem;
-            color: #ccc;
-            font-weight: lighter;
-        }
-
-        .links:hover {
-            border-bottom: 2px solid #fff;
-        }
-
-        .links {
-            border-bottom: 2px solid transparent;
-            transition: all 0.25s;
-            padding: 5px;
-            text-decoration: none;
-            color: #fff;
-        }
-
-        .btn {
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            letter-spacing: 1px;
-            border: none;
-        }
-
-        .common-btn {
-            background-color: #35A99C;
-            color: #fff;
-            border: 2px solid #35A99C;
-            transition: all 0.25s;
-        }
-
-        .common-btn:hover {
-            background-color: #fff;
-            color: #35A99C;
-            border: 2px solid #35A99C;
-            outline: none;
-        }
-
-        .ghost-btn {
-            background-color: #fff;
-            color: #35A99C;
-            border: 2px solid #35A99C;
-            outline: none;
-        }
-
-        .ghost-btn:hover {
-            background-color: #35A99C;
-            color: #fff;
-            transition: all 0.25s;
-            border: 2px solid #35A99C;
-        }
-
-        .heading-span {
-            font-weight: bolder;
-        }
-
-        .text-center {
-            text-align: center;
-        }
-
-        .small-para {
-            font-size: 14px;
-            color: #fff;
-        }
-
-        .white-text {
-            color: #fff;
-        }
-
-        .blue-text {
-            color: #363D73;
-        }
-
-        @media screen and (min-width: 576px) and (max-width: 820px) {
-            .logo {
-                padding: 0 3rem;
-            }
-
-            .hamburger {
-                display: block;
-                padding: 0 3rem;
-            }
-
-            .menu {
-                position: absolute;
-                right: 0;
-                padding: 0 3rem;
-                top: 75px;
-                background-image: linear-gradient(180deg, #74D7BB, #53C8B6, #35A99C);
-            }
-
-            .menu .menu-list {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                width: 60vw;
-                height: 100vh;
-            }
-
-            .menu-list .menu-list-items {
-                padding: 1rem 0;
-            }
-
-            .menu-items-hide {
-                display: none;
-            }
-
-            .cross-icon {
-                display: block;
-                text-align: end;
-                font-size: 30px;
-                padding-top: 1rem;
-            }
-
-            .cross-icon i {
-                color: #fff;
-            }
-        }
-
-        @media screen and (max-width: 575px) {
-            .logo {
-                padding: 0 2rem;
-            }
-
-            .hamburger {
-                display: block;
-                padding: 0 2rem;
-            }
-
-            .menu {
-                position: absolute;
-                right: 0;
-                padding: 0 2rem;
-                top: 75px;
-                background-image: linear-gradient(180deg, #74D7BB, #53C8B6, #35A99C);
-            }
-
-            .menu .menu-list {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                width: 60vw;
-                height: 100vh;
-            }
-
-            .menu-list .menu-list-items {
-                padding: 1rem 0;
-            }
-
-            .menu-items-hide {
-                display: none;
-            }
-
-            .cross-icon {
-                display: block;
-                text-align: end;
-                font-size: 30px;
-                padding-top: 1rem;
-            }
-
-            .cross-icon i {
-                color: #fff;
-            }
-
-            .hero {
-                margin: 4rem 0;
-            }
-
-            .hero .intro {
-                text-align: center;
-                margin: 0 2rem;
-            }
-
-            .about,
-            .portfolio,
-            .services,
-            .contact {
-                padding: 0 2rem;
-            }
-
-            .about {
-                margin: 4rem 0;
-            }
-
-            .contact-content {
-                display: flex;
-                flex-direction: column;
-            }
-
-            .contact-form-container,
-            .contact-details {
-                width: 100%;
-            }
-
-            .contact-form .form-controls,
-            .contact-form .form-btn {
-                width: 90%;
-            }
-
-            .footer-menu {
-                padding: 0 2rem;
-            }
-
-            .footer-list-items {
-                margin: 0 1rem 0 1rem;
-            }
-        }
-
-        .cross-icon {
-            display: none;
-        }
-    </style>
-</head>
-
-<body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">
-                <h2 class="logo-heading">Yash Shah</h2>
-            </div>
-            <div class="hamburger">
-                <i class="fa-solid fa-bars menu-icon" onclick="handleNavToggle()"></i>
-                <i class="fa-solid fa-times cross-icon" onclick="handleNavToggle()"></i>
-            </div>
-            <div class="menu">
-                <ul class="menu-list">
-                    <li class="menu-list-items"><a href="#" class="links">Home</a></li>
-                    <li class="menu-list-items"><a href="#about" class="links">About</a></li>
-                    <li class="menu-list-items"><a href="#portfolio" class="links">Portfolio</a></li>
-                    <li class="menu-list-items"><a href="#services" class="links">Services</a></li>
-                    <li class="menu-list-items"><a href="#contact" class="links">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-
-    <section class="hero">
-        <div class="intro">
-            <h2 class="greet-heading">Hello There!</h2>
-            <h2 class="my-heading">I am <span class="heading-span">Yash Shah</span></h2>
-            <p class="sub-heading">Front-End Developer</p>
-            <div class="intro-buttons">
-                <button class="common-btn btn">Hire Me</button>
-                <button class="ghost-btn btn">Get CV</button>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="about">
-        <h2>About Me</h2>
-        <div class="about-text">
-            <p>Hello, I'm Yash Shah, a passionate and dedicated front-end developer with a knack for creating engaging and interactive web experiences. My journey in web development began with a curiosity for how websites work and a desire to bring my creative ideas to life on the internet.</p>
-            <p>I have a solid foundation in HTML, CSS, and JavaScript, and I continuously strive to expand my skills and stay updated with the latest trends and technologies in the field. My goal is to build visually appealing, user-friendly, and responsive websites that provide an excellent user experience.</p>
-            <p>I enjoy solving problems and tackling new challenges, and I'm always eager to learn and grow as a developer. Whether it's working on a team project or building something from scratch, I bring enthusiasm, creativity, and a commitment to delivering high-quality results.</p>
-        </div>
-    </section>
-
-    <section id="technical-knowledge" class="technical-knowledge">
-        <h2>Technical Knowledge</h2>
-        <div class="technical-knowledge-text">
-            <ul>
-                <li>STRONGEST AREA: Github, CI/CD, Kubernetes, AWS, NodeJS, Python, DevOps, Web automation</li>
-                <li>LANGUAGES & TECH: Docker, Kubernetes, Jenkins, Gitlab, Python, JavaScript, Linux, NodeJS, Express, Dbms, MySql, Mongodb, HTML, CSS, Java, Selenium, Web automation</li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="work-experience" class="work-experience">
-        <h2>Work Experience</h2>
-        <div class="work-experience-text">
-            <h3>Squadron Technology Private Limited</h3>
-            <p>DevOps and Cloud Data Engineer</p>
-            <ul>
-                <li>Currently working as a full-time DevOps and cloud Data Engineer, building on my previous 5-month internship experience.</li>
-                <li>Collaborate with the DevOps team to create and manage CI/CD pipelines, ensuring efficient software delivery.</li>
-                <li>Lead containerization efforts using Docker and Kubernetes, optimizing application deployment and scalability.</li>
-            </ul>
-            <h3>Karma Foundation</h3>
-            <p>Intern</p>
-            <h3>Ownux Infosec</h3>
-            <p>Ownux Infosec is a company which provides different types of security such as Web Application Security Testing, Mobile Application Penetration Testing, etc.</p>
-        </div>
-    </section>
-
-    <section id="projects" class="projects">
-        <h2>Projects</h2>
-        <div class="projects-text">
-            <h3>Scraper Optimization and Containerization Project</h3>
-            <p>Enhancing data retrieval efficiency for Elasticsearch while transitioning to cloud deployment on AWS, improving performance, streamlining data acquisition, and achieving cost-effective scalability. The project incorporates an automated deployment workflow using GitHub Actions and infrastructure provisioning with Terraform on AWS for seamless updates and efficient resource management.</p>
-            <h3>CloudTrafficMonitor</h3>
-            <p>Built a strong API for tracking traffic on the side of the road and used API Gateway to simplify access. Authentication was implemented using AWS Cognito to guarantee safe and authorized use. The serverless architecture and AWS Code Pipeline were used to construct an effective CI/CD pipeline for easy deployment and upgrades.</p>
-            <h3>Gitlab CI/CD</h3>
-            <p>Modified the code of a SaaS application for an organization, made it execute more quickly utilizing AWS Step Function, and utilizing Gitlab and serverless, I created a CI/CD pipeline. It then used the Route 53 service to map the DNS with the load balancer URL after hosting the application on an AWS ECS cluster.</p>
-            <h3>Social Media Details API</h3>
-            <p>An API made using the FLASK framework and NoSQL lite database that fetches the details of a particular email. For example, if we enter an email ID, we will get details of that particular email such as whether the email ID is valid or not and if it has accounts on different social media platforms like Facebook, Twitter, and LinkedIn. Web automation is also done using Selenium.</p>
-            <h3>Kubernetes Deployment</h3>
-            <p>Using Kubernetes on AWS, I deployed a Node.js application and a MongoDB application. Terraform and shell scripts were used to automate the deployment of the application using two EC2 instances—one master and one slave.</p>
-            <h3>MySQL HA Cluster</h3>
-            <p>Engineered a robust high availability MySQL cluster by implementing replication between two nodes. Configured load balancing using Proxy SQL for optimized traffic distribution and seamless failover.</p>
-            <h3>Edustaff</h3>
-            <p>Made an E-learning project for support staff like customer service, receptionist, etc. where, according to their role, they will be redirected to the course where they can get training. They can play videos and the progress of the user will be saved, and if the user completes the quiz, they will get certificates. Used Node.js and hosted the application on AWS CLOUD using RDS and EC2 and used Terraform to deploy the infrastructure.</p>
-            <h3>Microcouriers</h3>
-            <p>A courier application made using Node.js that allows a user to place orders, update their order information, delete their order information. The application was connected with a MySQL database and was containerized using Docker and pushed to Docker Hub.</p>
-            <h3>EKS 2048 Game Deployment</h3>
-            <p>Demonstrated advanced AWS proficiency by deploying the classic 2048 game on an Amazon EKS cluster with Fargate launch type. Managed the entire project, from cluster setup to security enhancement and Helm deployment, showcasing effective cloud orchestration and Kubernetes skills for scalable and secure game hosting.</p>
-            <h3>Setting Up Prometheus and Grafana for Kubernetes Monitoring</h3>
-            <p>Successfully executed a project demonstrating expertise in modern application and infrastructure monitoring. Led the implementation of Prometheus and Grafana within a local Minikube Kubernetes simulation, emphasizing the ability to streamline observability for Kubernetes clusters. Empowered stakeholders with valuable insights into application performance and system health through this hands-on project.</p>
-        </div>
-    </section>
-
-    <section id="courses" class="courses">
-        <h2>Courses</h2>
-        <div class="courses-text">
-            <ul>
-                <li>Docker Essentials: A Developer Introduction - IBM</li>
-                <li>AWS Academy Cloud Foundations - AWS Academy</li>
-                <li>IT Academy: Network Virtualization Concepts - Coursera</li>
-                <li>Introduction to Relational Databases in SQL - DataCamp</li>
-                <li>CCNA Routing and Switching: Introduction to Networks - Cisco</li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="portfolio" class="portfolio">
-        <h2>Portfolio</h2>
-        <!-- Add portfolio content here -->
-    </section>
-
-    <section id="services" class="services">
-        <h2>Services</h2>
-        <div class="my-row">
-            <div class="my-col">
-                <div class="my-card">
-                    <div class="icon">
-                        <i class="fa-solid fa-code"></i>
-                    </div>
-                    <h3>Web Development</h3>
-                    <p>Creating responsive and user-friendly web applications using modern web technologies.</p>
-                </div>
-            </div>
-            <div class="my-col">
-                <div class="my-card">
-                    <div class="icon">
-                        <i class="fa-solid fa-server"></i>
-                    </div>
-                    <h3>DevOps</h3>
-                    <p>Implementing CI/CD pipelines, containerization, and cloud infrastructure management.</p>
-                </div>
-            </div>
-            <div class="my-col">
-                <div class="my-card">
-                    <div class="icon">
-                        <i class="fa-solid fa-shield-alt"></i>
-                    </div>
-                    <h3>Security</h3>
-                    <p>Providing web and mobile application security testing services.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact">
-        <h2>Contact</h2>
-        <div class="contact-content">
-            <div class="contact-form-container">
-                <form class="contact-form">
-                    <input type="text" class="form-controls" placeholder="Name">
-                    <input type="email" class="form-controls" placeholder="Email">
-                    <textarea class="form-controls" rows="5" placeholder="Message"></textarea>
-                    <button class="form-btn common-btn btn">Submit</button>
-                </form>
-            </div>
-            <div class="contact-details">
-                <p>Email: yashshah19@gnu.ac.in</p>
-                <p>Phone: +91 9558771737</p>
-                <p>LinkedIn: <a href="https://www.linkedin.com/in/yash-shah-b7129b1bb/" class="links">Yash Shah</a></p>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/yash-shah-b7129b1bb/" class="footer-list-items footer-links"><i
-                    class="fab fa-linkedin"></i></a>
-        </div>
-        <div class="footer-menu">
-            <ul class="footer-menu-list">
-                <li class="footer-menu-list-items"><a href="#" class="footer-links">Home</a></li>
-                <li class="footer-menu-list-items"><a href="#about" class="footer-links">About</a></li>
-                <li class="footer-menu-list-items"><a href="#portfolio" class="footer-links">Portfolio</a></li>
-                <li class="footer-menu-list-items"><a href="#services" class="footer-links">Services</a></li>
-                <li class="footer-menu-list-items"><a href="#contact" class="footer-links">Contact</a></li>
-            </ul>
-        </div>
-    </footer>
-
-    <script>
-        function handleNavToggle() {
-            const menu = document.querySelector('.menu');
-            const menuIcon = document.querySelector('.menu-icon');
-            const crossIcon = document.querySelector('.cross-icon');
-
-            menu.classList.toggle('menu-items-hide');
-            menuIcon.classList.toggle('menu-items-hide');
-            crossIcon.classList.toggle('menu-items-hide');
-        }
-    </script>
-</body>
+<!--index.html-->
+
+<!DOCTYPE html> 
+<html lang="en"> 
+
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0"> 
+    <title>My Portfolio</title> 
+    <link rel="stylesheet"
+        href= 
+"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity= 
+"sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="responsive.css"> 
+</head> 
+
+<body> 
+    <!-- Navbar header section -->
+    <header class="header"> 
+        <nav class="navbar"> 
+            <div class="logo"> 
+                <h2 class="logo-heading">Emrit Diyal</h2> 
+            </div> 
+            <div class="hamburger" id="hamburger"> 
+                <i class="fas fa-bars hamburger-icon"></i> 
+                <i class="fas fa-times cross-icon"></i> 
+            </div> 
+            <div class="menu"> 
+                <ul class="menu-list"> 
+                    <li class="menu-list-items"> 
+                        <a class="links" href="#home"> 
+                            Home 
+                        </a> 
+                    </li> 
+                    <li class="menu-list-items"> 
+                        <a class="links" href="#portfolio"> 
+                            Portfolio 
+                        </a> 
+                    </li> 
+                    <li class="menu-list-items"> 
+                        <a class="links" href="#about"> 
+                            About 
+                        </a> 
+                    </li> 
+                    <li class="menu-list-items"> 
+                        <a class="links" href="#services"> 
+                            Services 
+                        </a> 
+                    </li> 
+                    <li class="menu-list-items"> 
+                        <a class="links" href="#contact"> 
+                            Contact Me 
+                        </a> 
+                    </li> 
+                </ul> 
+            </div> 
+        </nav> 
+    </header> 
+
+    <!-- Main hero banner -->
+    <section id="home" class="hero"> 
+        <div class="intro"> 
+            <div class="headings"> 
+                <h3 class="greet-heading">Hello, I'm</h3> 
+                <h1 class="my-heading">Emrit Diyal</h1> 
+                <h4 class="sub-heading"> 
+                    A Software Engineer with 3 years of Experience. 
+                </h4> 
+            </div> 
+            <div class="intro-buttons"> 
+                <button class="btn common-btn">Hire Me</button> 
+                <button class="btn ghost-btn">Get Resume</button> 
+            </div> 
+        </div> 
+    </section> 
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio"> 
+        <div class="portfolio-heading"> 
+            <h1 class="my-heading text-center">Featured Portfolio</h1> 
+        </div> 
+        <div class="portfolio-content"> 
+            <div class="my-row"> 
+                <div class="my-col"> 
+                    <div class="my-card port-card"> 
+                        <div class="image"> 
+                            <img src="./Images/designImage2.avif"
+                                alt="Web Design Image"> 
+                        </div> 
+                        <h3 class="greet-heading blue-text">Web Design</h3> 
+                        <p class="small-para blue-text">Designing</p> 
+                    </div> 
+                </div> 
+                <div class="my-col"> 
+                    <div class="my-card port-card"> 
+                        <div class="image"> 
+                            <img src="./Images/webDevelopment2.avif"
+                                alt="Web Development Image"> 
+                        </div> 
+                        <h3 class="greet-heading blue-text"> 
+                            Web Development 
+                        </h3> 
+                        <p class="small-para blue-text">Development</p> 
+                    </div> 
+                </div> 
+                <div class="my-col"> 
+                    <div class="my-card port-card"> 
+                        <div class="image"> 
+                            <img src="./Images/SEOImage2.avif" alt="SEO Image"> 
+                        </div> 
+                        <h3 class="greet-heading blue-text">SEO</h3> 
+                        <p class="small-para blue-text">Optimization</p> 
+                    </div> 
+                </div> 
+            </div> 
+            <div class="my-row"> 
+                <div class="my-col"> 
+                    <div class="my-card port-card"> 
+                        <div class="image"> 
+                            <img src="./Images/contentImage2.avif"
+                                alt="Content Writting Image"> 
+                        </div> 
+                        <h3 class="greet-heading blue-text"> 
+                            Content Writing 
+                        </h3> 
+                        <p class="small-para blue-text">Writing</p> 
+                    </div> 
+                </div> 
+                <div class="my-col"> 
+                    <div class="my-card port-card"> 
+                        <div class="image"> 
+                            <img src="./Images/wordpressImage2.avif"
+                                alt="Wordpress Image"> 
+                        </div> 
+                        <h3 class="greet-heading blue-text"> 
+                            WordPress Dev 
+                        </h3> 
+                        <p class="small-para blue-text"> 
+                            Content Management System 
+                        </p> 
+                    </div> 
+                </div> 
+                <div class="my-col"> 
+                    <div class="my-card port-card"> 
+                        <div class="image"> 
+                            <img src="./Images/videoEditing2.avif"
+                                alt="Video Editing Image"> 
+                        </div> 
+                        <h3 class="greet-heading blue-text"> 
+                            Video Editing 
+                        </h3> 
+                        <p class="small-para blue-text">Editing</p> 
+                    </div> 
+                </div> 
+            </div> 
+        </div> 
+    </section> 
+
+    <!-- About Section -->
+    <section id="about" class="about"> 
+        <div class="about-text"> 
+            <h1 class="my-heading">About Me</h1> 
+            <p class="lead-para"> 
+                GeeksforGeeks is a leading platform 
+                that provides computer science 
+                resources and coding challenges for 
+                programmers and technology 
+                enthusiasts, along with interview 
+                and exam preparations for upcoming 
+                aspirants. With a strong emphasis on 
+                enhancing coding skills and knowledge, 
+                it has become a trusted destination 
+                for over 12 million plus registered 
+                users worldwide. The platform offers 
+                a vast collection of tutorials, practice 
+                problems, interview tutorials, articles, 
+                and courses, covering various domains 
+                of computer science. 
+            </p> 
+            <p> 
+                Our exceptional mentors hailing from top 
+                colleges & organizations have the 
+                ability to guide you on a journey from 
+                the humble beginnings of coding to 
+                the pinnacle of expertise. Under their 
+                guidance watch your skills flourish 
+                as we lay the foundation and help you 
+                conquer the world of coding. 
+            </p> 
+        </div> 
+        <div class="about-image"> 
+            <img src="./Images/heroImg2.avif" alt="About Image"> 
+        </div> 
+    </section> 
+
+    <!-- Services Section -->
+    <section class="services" id="services"> 
+        <div class="services-heading"> 
+            <h1 class="my-heading text-center">My Services</h1> 
+        </div> 
+        <div class="services-content"> 
+            <div class="my-row"> 
+                <div class="my-col"> 
+                    <div class="my-card"> 
+                        <div class="icon"> 
+                            <i class="fas fa-paint-brush"></i> 
+                        </div> 
+                        <h3 class="greet-heading blue-text">Web Design</h3> 
+                        <p class="small-para"> 
+                            Web development refers to the creating, 
+                            building, and maintaining 
+                            of websites. It includes aspects such as 
+                            web design, web publishing, 
+                            web programming, and database management. 
+                            It is the creation of an 
+                            application that works over the internet 
+                            i.e. websites. 
+                        </p> 
+                        <p class="small-para"> 
+                            Web development refers to the creating, 
+                            building, and maintaining 
+                            of websites. It includes aspects such as 
+                            web design, web publishing, 
+                            web programming, and database management. 
+                            It is the creation of an 
+                            application that works over the internet 
+                            i.e. websites. 
+                        </p> 
+                    </div> 
+                </div> 
+                <div class="my-col"> 
+                    <div class="my-card"> 
+                        <div class="icon"> 
+                            <i class="fa-solid fa-code"></i> 
+                        </div> 
+                        <h3 class="greet-heading blue-text"> 
+                            Web Development 
+                        </h3> 
+                        <p class="small-para"> 
+                            Web development refers to the creating, 
+                            building, and maintaining 
+                            of websites. It includes aspects such as 
+                            web design, web publishing, 
+                            web programming, and database management. 
+                            It is the creation of an 
+                            application that works over the internet 
+                            i.e. websites. 
+                        </p> 
+                        <p class="small-para"> 
+                            Web development refers to the creating, 
+                            building, and maintaining 
+                            of websites. It includes aspects such as 
+                            web design, web publishing, 
+                            web programming, and database management. 
+                            It is the creation of an 
+                            application that works over the internet 
+                            i.e. websites. 
+                        </p> 
+                    </div> 
+                </div> 
+                <div class="my-col"> 
+                    <div class="my-card"> 
+                        <div class="icon"> 
+                            <i class="fas fa-chart-line"></i> 
+                        </div> 
+                        <h3 class="greet-heading blue-text">SEO</h3> 
+                        <p class="small-para"> 
+                            Web development refers to the creating, 
+                            building, and maintaining 
+                            of websites. It includes aspects such as 
+                            web design, web publishing, 
+                            web programming, and database management. 
+                            It is the creation of an 
+                            application that works over the internet 
+                            i.e. websites. 
+                        </p> 
+                        <p class="small-para"> 
+                            Web development refers to the creating, 
+                            building, and maintaining 
+                            of websites. It includes aspects such as 
+                            web design, web publishing, 
+                            web programming, and database management. 
+                            It is the creation of an 
+                            application that works over the internet 
+                            i.e. websites. 
+                        </p> 
+                    </div> 
+                </div> 
+            </div> 
+            <div class="my-row"> 
+                <div class="my-col"> 
+                    <div class="my-card"> 
+                        <div class="icon"> 
+                            <i class="fas fa-quote-left"></i> 
+                        </div> 
+                        <h3 class="greet-heading blue-text"> 
+                            Content Writting 
+                        </h3> 
+                        <p class="small-para"> 
+                            Web development refers to the creating, 
+                            building, and maintaining of websites. 
+                            It includes aspects such as web design, 
+                            web publishing, web programming, and 
+                            database management. It is the creation 
+                            of an application that works over the 
+                            internet i.e. websites. 
+                        </p> 
+                        <p class="small-para"> 
+                            Web development refers to the creating, 
+                            building, and maintaining of websites. 
+                            It includes aspects such as web design, 
+                            web publishing, web programming, and 
+                            database management. It is the creation of an 
+                            application that works over the internet i.e. 
+                            websites. 
+                        </p> 
+                    </div> 
+                </div> 
+                <div class="my-col"> 
+                    <div class="my-card"> 
+                        <div class="icon"> 
+                            <i class="fab fa-wordpress-simple"></i> 
+                        </div> 
+                        <h3 class="greet-heading blue-text"> 
+                            WordPress Dev 
+                        </h3> 
+                        <p class="small-para"> 
+                            Web development refers to the creating, 
+                            building, and maintaining of websites. 
+                            It includes aspects such as web design, 
+                            web publishing, web programming, and 
+                            database management. It is the creation 
+                            of an application that works over the 
+                            internet i.e. websites. 
+                        </p> 
+                        <p class="small-para"> 
+                            Web development refers to the creating, 
+                            building, and maintaining 
+                            of websites. It includes aspects such as 
+                            web design, web publishing, 
+                            web programming, and database management. 
+                            It is the creation of an 
+                            application that works over the internet 
+                            i.e. websites. 
+                        </p> 
+                    </div> 
+                </div> 
+                <div class="my-col"> 
+                    <div class="my-card"> 
+                        <div class="icon"> 
+                            <i class="fas fa-video"></i> 
+                        </div> 
+                        <h3 class="greet-heading blue-text"> 
+                            Video Editing 
+                        </h3> 
+                        <p class="small-para"> 
+                            Web development refers to the creating, 
+                            building, and maintaining 
+                            of websites. It includes aspects such as 
+                            web design, web publishing, 
+                            web programming, and database management. 
+                            It is the creation of an 
+                            application that works over the internet 
+                            i.e. websites. 
+                        </p> 
+                        <p class="small-para"> 
+                            Web development refers to the creating, 
+                            building, and maintaining 
+                            of websites. It includes aspects such as 
+                            web design, web publishing, 
+                            web programming, and database management. 
+                            It is the creation of an 
+                            application that works over the internet 
+                            i.e. websites. 
+                        </p> 
+                    </div> 
+                </div> 
+            </div> 
+        </div> 
+    </section> 
+
+    <!-- Contact me section -->
+    <section class="contact" id="contact"> 
+        <div class="contact-heading"> 
+            <h1 class="my-heading text-center">Contact Me</h1> 
+        </div> 
+        <div class="contact-content"> 
+            <div class="contact-form-container"> 
+                <h1 class="greet-heading">Get In Touch</h1> 
+                <form class="contact-form"> 
+                    <input class="form-controls" type="text"
+                        placeholder="Your Name"> 
+                    <input class="form-controls" type="text"
+                        placeholder="Your Email"> 
+                    <input class="form-controls" type="text"
+                        placeholder="Your Phone"> 
+                    <textarea class="form-controls"
+                            placeholder="Write your message"
+                            name="message" id="" cols="30"
+                            rows="10"> 
+                    </textarea> 
+                    <input class="form-btn btn common-btn"
+                        type="submit" value="Send Message"> 
+                </form> 
+            </div> 
+            <div class="contact-details"> 
+                <h1 class="greet-heading">My Contact Details</h1> 
+                <div class="details"> 
+                    <h5 class="contact-heading">EMAIL</h5> 
+                    <p class="contact-text">example@gmail.com</p> 
+                </div> 
+                <div class="details"> 
+                    <h5 class="contact-heading">PHONE</h5> 
+                    <p class="contact-text">+91 0123456789</p> 
+                </div> 
+                <div class="details"> 
+                    <h5 class="contact-heading">FAX</h5> 
+                    <p class="contact-text">+91 0123456789</p> 
+                </div> 
+                <div class="details"> 
+                    <h5 class="contact-heading">ADDRESS</h5> 
+                    <p class="contact-text">San Francisco, CA</p> 
+                    <p>4th Floor8 Lower</p> 
+                    <p>San Francisco street, M1 50F</p> 
+                </div> 
+            </div> 
+        </div> 
+    </section> 
+
+    <!-- Footer section -->
+    <footer class="footer"> 
+        <div class="footer-content text-center"> 
+            <h4> 
+                Copyright © 2023 All rights reserved | 
+                This portfolio website template is created 
+                by GeeksforGeeks. 
+            </h4> 
+            <div class="social-links"> 
+                <div class="footer-menu"> 
+                    <ul class="footer-menu-list"> 
+                        <li class="footer-list-items"> 
+                            <a class="footer-links" href="#"> 
+                                <i class="fab fa-facebook-f"></i> 
+                            </a> 
+                        </li> 
+                        <li class="footer-list-items"> 
+                            <a class="footer-links" href="#"> 
+                                <i class="fab fa-twitter"></i> 
+                            </a> 
+                        </li> 
+                        <li class="footer-list-items"> 
+                            <a class="footer-links" href="#"> 
+                                <i class="fab fa-instagram"></i> 
+                            </a> 
+                        </li> 
+                        <li class="footer-list-items"> 
+                            <a class="footer-links" href="#"> 
+                                <i class="fab fa-linkedin-in"></i> 
+                            </a> 
+                        </li> 
+                    </ul> 
+                </div> 
+            </div> 
+        </div> 
+    </footer> 
+
+    <script src= 
+"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"
+        integrity= 
+"sha512-uKQ39gEGiyUJl4AI6L+ekBdGKpGw4xJ55+xyJG7YFlJokPNYegn9KwQ3P8A7aFQAUtUsAQHep+d/lrGqrbPIDQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"> 
+    </script> 
+    <script src="script.js"></script> 
+</body> 
 
 </html>
