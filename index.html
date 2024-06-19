@@ -90,24 +90,27 @@
             justify-content: space-evenly;
         }
 
-        .about {
+        .about,
+        .technical-knowledge,
+        .work-experience,
+        .projects,
+        .courses {
             display: flex;
+            flex-direction: column;
             align-items: center;
             background-image: linear-gradient(45deg, #363D73, #2794B3);
-            justify-content: space-between;
-            width: 100%;
-        }
-
-        .about .about-text {
-            width: 450px;
             color: #fff;
-            padding: 5rem 1rem 5rem 5rem;
+            width: 100%;
+            padding: 2rem 5rem;
         }
 
-        .about .about-image img {
-            height: 400px;
-            width: 450px;
-            padding: 5rem 5rem 5rem 1rem;
+        .about-text,
+        .technical-knowledge-text,
+        .work-experience-text,
+        .projects-text,
+        .courses-text {
+            width: 100%;
+            padding: 1rem 0;
         }
 
         .portfolio {
@@ -354,29 +357,34 @@
                 padding: 0 3rem;
                 top: 75px;
                 background-image: linear-gradient(180deg, #74D7BB, #53C8B6, #35A99C);
-                display: none;
-                transition: all 0.25s;
             }
 
             .menu .menu-list {
                 display: flex;
                 flex-direction: column;
-                width: 200px;
+                align-items: center;
+                justify-content: center;
+                width: 60vw;
+                height: 100vh;
             }
 
-            .menu .menu-list .menu-list-items {
-                padding: 0.5rem 0;
-                border-bottom: 1px solid #000;
+            .menu-list .menu-list-items {
+                padding: 1rem 0;
+            }
+
+            .menu-items-hide {
+                display: none;
             }
 
             .cross-icon {
                 display: block;
                 text-align: end;
-                padding: 1rem 0;
+                font-size: 30px;
+                padding-top: 1rem;
             }
 
-            .show {
-                display: block;
+            .cross-icon i {
+                color: #fff;
             }
         }
 
@@ -396,63 +404,58 @@
                 padding: 0 2rem;
                 top: 75px;
                 background-image: linear-gradient(180deg, #74D7BB, #53C8B6, #35A99C);
-                display: none;
-                transition: all 0.25s;
             }
 
             .menu .menu-list {
                 display: flex;
                 flex-direction: column;
-                width: 200px;
+                align-items: center;
+                justify-content: center;
+                width: 60vw;
+                height: 100vh;
             }
 
-            .menu .menu-list .menu-list-items {
-                padding: 0.5rem 0;
-                border-bottom: 1px solid #000;
+            .menu-list .menu-list-items {
+                padding: 1rem 0;
+            }
+
+            .menu-items-hide {
+                display: none;
             }
 
             .cross-icon {
                 display: block;
                 text-align: end;
-                padding: 1rem 0;
+                font-size: 30px;
+                padding-top: 1rem;
             }
 
-            .show {
-                display: block;
+            .cross-icon i {
+                color: #fff;
             }
 
-            .about {
-                flex-direction: column;
+            .hero {
+                margin: 4rem 0;
             }
 
-            .about .about-image img {
-                height: 300px;
-                width: 300px;
-                padding: 1rem;
+            .hero .intro {
+                text-align: center;
+                margin: 0 2rem;
             }
 
-            .about .about-text {
-                padding: 1rem;
-                width: 300px;
-            }
-
-            .services {
-                padding: 0 2rem;
-            }
-
+            .about,
+            .portfolio,
+            .services,
             .contact {
                 padding: 0 2rem;
             }
 
-            .portfolio {
-                padding: 0 2rem;
-            }
-
-            .footer-menu {
-                padding: 0 2rem;
+            .about {
+                margin: 4rem 0;
             }
 
             .contact-content {
+                display: flex;
                 flex-direction: column;
             }
 
@@ -463,204 +466,216 @@
 
             .contact-form .form-controls,
             .contact-form .form-btn {
-                width: 100%;
+                width: 90%;
             }
+
+            .footer-menu {
+                padding: 0 2rem;
+            }
+
+            .footer-list-items {
+                margin: 0 1rem 0 1rem;
+            }
+        }
+
+        .cross-icon {
+            display: none;
         }
     </style>
 </head>
 
 <body>
-    <!-- Navbar Section -->
-    <nav class="navbar">
-        <div class="logo">
-            <h2 class="logo-heading">Yash Shah</h2>
-        </div>
-        <div class="hamburger">
-            <i class="fas fa-bars"></i>
-        </div>
-        <div class="menu">
-            <div class="cross-icon">
-                <i class="fas fa-times"></i>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h2 class="logo-heading">Yash Shah</h2>
             </div>
-            <ul class="menu-list">
-                <li class="menu-list-items"><a href="#home" class="links">Home</a></li>
-                <li class="menu-list-items"><a href="#about" class="links">About</a></li>
-                <li class="menu-list-items"><a href="#portfolio" class="links">Portfolio</a></li>
-                <li class="menu-list-items"><a href="#services" class="links">Services</a></li>
-                <li class="menu-list-items"><a href="#contact" class="links">Contact</a></li>
+            <div class="hamburger">
+                <i class="fa-solid fa-bars menu-icon" onclick="handleNavToggle()"></i>
+                <i class="fa-solid fa-times cross-icon" onclick="handleNavToggle()"></i>
+            </div>
+            <div class="menu">
+                <ul class="menu-list">
+                    <li class="menu-list-items"><a href="#" class="links">Home</a></li>
+                    <li class="menu-list-items"><a href="#about" class="links">About</a></li>
+                    <li class="menu-list-items"><a href="#portfolio" class="links">Portfolio</a></li>
+                    <li class="menu-list-items"><a href="#services" class="links">Services</a></li>
+                    <li class="menu-list-items"><a href="#contact" class="links">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="intro">
+            <h2 class="greet-heading">Hello There!</h2>
+            <h2 class="my-heading">I am <span class="heading-span">Yash Shah</span></h2>
+            <p class="sub-heading">Front-End Developer</p>
+            <div class="intro-buttons">
+                <button class="common-btn btn">Hire Me</button>
+                <button class="ghost-btn btn">Get CV</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <div class="about-text">
+            <p>Hello, I'm Yash Shah, a passionate and dedicated front-end developer with a knack for creating engaging and interactive web experiences. My journey in web development began with a curiosity for how websites work and a desire to bring my creative ideas to life on the internet.</p>
+            <p>I have a solid foundation in HTML, CSS, and JavaScript, and I continuously strive to expand my skills and stay updated with the latest trends and technologies in the field. My goal is to build visually appealing, user-friendly, and responsive websites that provide an excellent user experience.</p>
+            <p>I enjoy solving problems and tackling new challenges, and I'm always eager to learn and grow as a developer. Whether it's working on a team project or building something from scratch, I bring enthusiasm, creativity, and a commitment to delivering high-quality results.</p>
+        </div>
+    </section>
+
+    <section id="technical-knowledge" class="technical-knowledge">
+        <h2>Technical Knowledge</h2>
+        <div class="technical-knowledge-text">
+            <ul>
+                <li>STRONGEST AREA: Github, CI/CD, Kubernetes, AWS, NodeJS, Python, DevOps, Web automation</li>
+                <li>LANGUAGES & TECH: Docker, Kubernetes, Jenkins, Gitlab, Python, JavaScript, Linux, NodeJS, Express, Dbms, MySql, Mongodb, HTML, CSS, Java, Selenium, Web automation</li>
             </ul>
         </div>
-    </nav>
+    </section>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="intro">
-            <h5 class="greet-heading">Hello, I am</h5>
-            <h1 class="my-heading">Yash Shah</h1>
-            <p class="sub-heading">Frontend Developer | Backend Developer | Full Stack Developer</p>
-            <div class="intro-buttons">
-                <button class="btn common-btn">Hire Me</button>
-                <button class="btn ghost-btn">Download CV</button>
-            </div>
+    <section id="work-experience" class="work-experience">
+        <h2>Work Experience</h2>
+        <div class="work-experience-text">
+            <h3>Squadron Technology Private Limited</h3>
+            <p>DevOps and Cloud Data Engineer</p>
+            <ul>
+                <li>Currently working as a full-time DevOps and cloud Data Engineer, building on my previous 5-month internship experience.</li>
+                <li>Collaborate with the DevOps team to create and manage CI/CD pipelines, ensuring efficient software delivery.</li>
+                <li>Lead containerization efforts using Docker and Kubernetes, optimizing application deployment and scalability.</li>
+            </ul>
+            <h3>Karma Foundation</h3>
+            <p>Intern</p>
+            <h3>Ownux Infosec</h3>
+            <p>Ownux Infosec is a company which provides different types of security such as Web Application Security Testing, Mobile Application Penetration Testing, etc.</p>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="about-text">
-            <h2 class="white-text">About Me</h2>
-            <p class="small-para">I am Yash Shah, a dedicated and efficient full stack developer with 2+ years of experience in application layers, presentation layers, and databases. I hold a Bachelor of Technology in Computer Science and Engineering. Passionate about implementing and launching new projects, I have the ability to translate business requirements into technical solutions. Proficient in developing consumer-focused websites using HTML, CSS, JavaScript, React, Redux, and back-end development using Node.js, Express.js, MongoDB, and MySQL.</p>
-        </div>
-        <div class="about-image">
-            <img src="./Images/aboutImage.jpg" alt="Yash Shah">
-        </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section class="portfolio" id="portfolio">
-        <div class="text-center">
-            <h2 class="blue-text">Portfolio</h2>
-            <p>Here are some of my recent projects</p>
-        </div>
-        <div class="my-row">
-            <div class="my-col">
-                <div class="port-card">
-                    <div class="image">
-                        <img src="./Images/portfolio1.jpg" alt="Project 1">
-                    </div>
-                    <div class="port-desc">
-                        <h3>Project One</h3>
-                        <p>A web application for online shopping.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="my-col">
-                <div class="port-card">
-                    <div class="image">
-                        <img src="./Images/portfolio2.jpg" alt="Project 2">
-                    </div>
-                    <div class="port-desc">
-                        <h3>Project Two</h3>
-                        <p>An application for task management.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="my-col">
-                <div class="port-card">
-                    <div class="image">
-                        <img src="./Images/portfolio3.jpg" alt="Project 3">
-                    </div>
-                    <div class="port-desc">
-                        <h3>Project Three</h3>
-                        <p>A social media application.</p>
-                    </div>
-                </div>
-            </div>
+    <section id="projects" class="projects">
+        <h2>Projects</h2>
+        <div class="projects-text">
+            <h3>Scraper Optimization and Containerization Project</h3>
+            <p>Enhancing data retrieval efficiency for Elasticsearch while transitioning to cloud deployment on AWS, improving performance, streamlining data acquisition, and achieving cost-effective scalability. The project incorporates an automated deployment workflow using GitHub Actions and infrastructure provisioning with Terraform on AWS for seamless updates and efficient resource management.</p>
+            <h3>CloudTrafficMonitor</h3>
+            <p>Built a strong API for tracking traffic on the side of the road and used API Gateway to simplify access. Authentication was implemented using AWS Cognito to guarantee safe and authorized use. The serverless architecture and AWS Code Pipeline were used to construct an effective CI/CD pipeline for easy deployment and upgrades.</p>
+            <h3>Gitlab CI/CD</h3>
+            <p>Modified the code of a SaaS application for an organization, made it execute more quickly utilizing AWS Step Function, and utilizing Gitlab and serverless, I created a CI/CD pipeline. It then used the Route 53 service to map the DNS with the load balancer URL after hosting the application on an AWS ECS cluster.</p>
+            <h3>Social Media Details API</h3>
+            <p>An API made using the FLASK framework and NoSQL lite database that fetches the details of a particular email. For example, if we enter an email ID, we will get details of that particular email such as whether the email ID is valid or not and if it has accounts on different social media platforms like Facebook, Twitter, and LinkedIn. Web automation is also done using Selenium.</p>
+            <h3>Kubernetes Deployment</h3>
+            <p>Using Kubernetes on AWS, I deployed a Node.js application and a MongoDB application. Terraform and shell scripts were used to automate the deployment of the application using two EC2 instances—one master and one slave.</p>
+            <h3>MySQL HA Cluster</h3>
+            <p>Engineered a robust high availability MySQL cluster by implementing replication between two nodes. Configured load balancing using Proxy SQL for optimized traffic distribution and seamless failover.</p>
+            <h3>Edustaff</h3>
+            <p>Made an E-learning project for support staff like customer service, receptionist, etc. where, according to their role, they will be redirected to the course where they can get training. They can play videos and the progress of the user will be saved, and if the user completes the quiz, they will get certificates. Used Node.js and hosted the application on AWS CLOUD using RDS and EC2 and used Terraform to deploy the infrastructure.</p>
+            <h3>Microcouriers</h3>
+            <p>A courier application made using Node.js that allows a user to place orders, update their order information, delete their order information. The application was connected with a MySQL database and was containerized using Docker and pushed to Docker Hub.</p>
+            <h3>EKS 2048 Game Deployment</h3>
+            <p>Demonstrated advanced AWS proficiency by deploying the classic 2048 game on an Amazon EKS cluster with Fargate launch type. Managed the entire project, from cluster setup to security enhancement and Helm deployment, showcasing effective cloud orchestration and Kubernetes skills for scalable and secure game hosting.</p>
+            <h3>Setting Up Prometheus and Grafana for Kubernetes Monitoring</h3>
+            <p>Successfully executed a project demonstrating expertise in modern application and infrastructure monitoring. Led the implementation of Prometheus and Grafana within a local Minikube Kubernetes simulation, emphasizing the ability to streamline observability for Kubernetes clusters. Empowered stakeholders with valuable insights into application performance and system health through this hands-on project.</p>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="text-center">
-            <h2 class="blue-text">Services</h2>
-            <p>Here are the services I offer</p>
+    <section id="courses" class="courses">
+        <h2>Courses</h2>
+        <div class="courses-text">
+            <ul>
+                <li>Docker Essentials: A Developer Introduction - IBM</li>
+                <li>AWS Academy Cloud Foundations - AWS Academy</li>
+                <li>IT Academy: Network Virtualization Concepts - Coursera</li>
+                <li>Introduction to Relational Databases in SQL - DataCamp</li>
+                <li>CCNA Routing and Switching: Introduction to Networks - Cisco</li>
+            </ul>
         </div>
+    </section>
+
+    <section id="portfolio" class="portfolio">
+        <h2>Portfolio</h2>
+        <!-- Add portfolio content here -->
+    </section>
+
+    <section id="services" class="services">
+        <h2>Services</h2>
         <div class="my-row">
             <div class="my-col">
                 <div class="my-card">
                     <div class="icon">
-                        <i class="fas fa-laptop-code"></i>
+                        <i class="fa-solid fa-code"></i>
                     </div>
                     <h3>Web Development</h3>
-                    <p>Developing responsive and dynamic websites.</p>
+                    <p>Creating responsive and user-friendly web applications using modern web technologies.</p>
                 </div>
             </div>
             <div class="my-col">
                 <div class="my-card">
                     <div class="icon">
-                        <i class="fas fa-mobile-alt"></i>
+                        <i class="fa-solid fa-server"></i>
                     </div>
-                    <h3>Mobile Development</h3>
-                    <p>Creating mobile applications for iOS and Android.</p>
+                    <h3>DevOps</h3>
+                    <p>Implementing CI/CD pipelines, containerization, and cloud infrastructure management.</p>
                 </div>
             </div>
             <div class="my-col">
                 <div class="my-card">
                     <div class="icon">
-                        <i class="fas fa-cloud"></i>
+                        <i class="fa-solid fa-shield-alt"></i>
                     </div>
-                    <h3>Cloud Services</h3>
-                    <p>Providing cloud solutions for businesses.</p>
+                    <h3>Security</h3>
+                    <p>Providing web and mobile application security testing services.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="text-center">
-            <h2 class="blue-text">Contact Me</h2>
-            <p>Get in touch with me</p>
-        </div>
+    <section id="contact" class="contact">
+        <h2>Contact</h2>
         <div class="contact-content">
             <div class="contact-form-container">
-                <form action="#" class="contact-form">
+                <form class="contact-form">
                     <input type="text" class="form-controls" placeholder="Name">
                     <input type="email" class="form-controls" placeholder="Email">
                     <textarea class="form-controls" rows="5" placeholder="Message"></textarea>
-                    <button type="submit" class="btn form-btn common-btn">Submit</button>
+                    <button class="form-btn common-btn btn">Submit</button>
                 </form>
             </div>
             <div class="contact-details">
-                <h3>Contact Details</h3>
-                <p>Email: yash.shah@example.com</p>
-                <p>Phone: +123 456 7890</p>
-                <p>Address: 123 Street, City, Country</p>
+                <p>Email: yashshah19@gnu.ac.in</p>
+                <p>Phone: +91 9558771737</p>
+                <p>LinkedIn: <a href="https://www.linkedin.com/in/yash-shah-b7129b1bb/" class="links">Yash Shah</a></p>
             </div>
         </div>
     </section>
 
-    <!-- Footer Section -->
     <footer class="footer">
         <div class="social-links">
-            <div class="footer-list-items">
-                <a href="#" class="footer-links"><i class="fab fa-facebook-f"></i></a>
-            </div>
-            <div class="footer-list-items">
-                <a href="#" class="footer-links"><i class="fab fa-twitter"></i></a>
-            </div>
-            <div class="footer-list-items">
-                <a href="#" class="footer-links"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-            <div class="footer-list-items">
-                <a href="#" class="footer-links"><i class="fab fa-github"></i></a>
-            </div>
+            <a href="https://www.linkedin.com/in/yash-shah-b7129b1bb/" class="footer-list-items footer-links"><i
+                    class="fab fa-linkedin"></i></a>
         </div>
         <div class="footer-menu">
-            <ul class="footer-list">
-                <li class="footer-list-items"><a href="#home" class="footer-links">Home</a></li>
-                <li class="footer-list-items"><a href="#about" class="footer-links">About</a></li>
-                <li class="footer-list-items"><a href="#portfolio" class="footer-links">Portfolio</a></li>
-                <li class="footer-list-items"><a href="#services" class="footer-links">Services</a></li>
-                <li class="footer-list-items"><a href="#contact" class="footer-links">Contact</a></li>
+            <ul class="footer-menu-list">
+                <li class="footer-menu-list-items"><a href="#" class="footer-links">Home</a></li>
+                <li class="footer-menu-list-items"><a href="#about" class="footer-links">About</a></li>
+                <li class="footer-menu-list-items"><a href="#portfolio" class="footer-links">Portfolio</a></li>
+                <li class="footer-menu-list-items"><a href="#services" class="footer-links">Services</a></li>
+                <li class="footer-menu-list-items"><a href="#contact" class="footer-links">Contact</a></li>
             </ul>
         </div>
-        <div class="copyright">
-            <p>&copy; 2023 Yash Shah. All rights reserved.</p>
-        </div>
     </footer>
+
     <script>
-        const hamburger = document.querySelector(".hamburger");
-        const menu = document.querySelector(".menu");
-        const crossIcon = document.querySelector(".cross-icon");
+        function handleNavToggle() {
+            const menu = document.querySelector('.menu');
+            const menuIcon = document.querySelector('.menu-icon');
+            const crossIcon = document.querySelector('.cross-icon');
 
-        hamburger.addEventListener("click", () => {
-            menu.classList.add("show");
-        });
-
-        crossIcon.addEventListener("click", () => {
-            menu.classList.remove("show");
-        });
+            menu.classList.toggle('menu-items-hide');
+            menuIcon.classList.toggle('menu-items-hide');
+            crossIcon.classList.toggle('menu-items-hide');
+        }
     </script>
 </body>
 
