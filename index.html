@@ -191,53 +191,29 @@
                         </div>
                         <h3 class="greet-heading blue-text">Web Development</h3>
                         <p class="small-para">
-                            Building and maintaining robust websites and web applications.
+                            Developing dynamic and responsive websites.
                         </p>
                     </div>
                 </div>
                 <div class="my-col">
                     <div class="my-card">
                         <div class="icon">
-                            <i class="fas fa-chart-line"></i>
+                            <i class="fa-brands fa-aws"></i>
                         </div>
-                        <h3 class="greet-heading blue-text">SEO</h3>
+                        <h3 class="greet-heading blue-text">Cloud Engineering</h3>
                         <p class="small-para">
-                            Optimizing websites to rank higher in search engine results and attract more visitors.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="my-row">
-                <div class="my-col">
-                    <div class="my-card">
-                        <div class="icon">
-                            <i class="fas fa-quote-left"></i>
-                        </div>
-                        <h3 class="greet-heading blue-text">Content Writing</h3>
-                        <p class="small-para">
-                            Crafting engaging and informative content for websites and blogs.
+                            Deploying and managing applications in the cloud.
                         </p>
                     </div>
                 </div>
                 <div class="my-col">
                     <div class="my-card">
                         <div class="icon">
-                            <i class="fab fa-wordpress-simple"></i>
+                            <i class="fa-solid fa-shield"></i>
                         </div>
-                        <h3 class="greet-heading blue-text">WordPress</h3>
+                        <h3 class="greet-heading blue-text">DevOps</h3>
                         <p class="small-para">
-                            Developing custom WordPress themes and plugins to meet client needs.
-                        </p>
-                    </div>
-                </div>
-                <div class="my-col">
-                    <div class="my-card">
-                        <div class="icon">
-                            <i class="fa-solid fa-person-walking-arrow-loop-left"></i>
-                        </div>
-                        <h3 class="greet-heading blue-text">Web Automation</h3>
-                        <p class="small-para">
-                            Automating web tasks for efficiency and accuracy using tools like Selenium.
+                            Ensuring smooth and efficient CI/CD processes.
                         </p>
                     </div>
                 </div>
@@ -251,31 +227,44 @@
             <h1 class="my-heading text-center">Contact Me</h1>
         </div>
         <div class="contact-content">
-            <form action="https://formspree.io/f/xqkgozgo" method="POST" class="form">
-                <input type="text" name="name" class="form-input" placeholder="Name">
-                <input type="email" name="email" class="form-input" placeholder="Email">
-                <textarea name="message" class="form-input" rows="6" placeholder="Message"></textarea>
-                <input type="submit" value="Submit" class="btn common-btn">
+            <form class="form" id="contact-form">
+                <div class="input-row">
+                    <input class="input" type="text" id="name" name="name" placeholder="Enter your name" required>
+                </div>
+                <div class="input-row">
+                    <input class="input" type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="input-row">
+                    <textarea class="input" id="message" name="message" placeholder="Enter your message" required></textarea>
+                </div>
+                <button class="btn common-btn" type="submit">Send Message</button>
             </form>
         </div>
     </section>
 
     <!-- Footer Section -->
-    <footer class="footer">
-        <div class="footer-content">
-            <ul class="social-media-icons">
-                <li><a href="https://github.com/YashShah03"><i class="fab fa-github"></i></a></li>
-                <li><a href="https://www.linkedin.com/in/yash-shah-722422173/"><i class="fab fa-linkedin"></i></a></li>
-            </ul>
-            <p class="footer-text">
-                &copy; 2024 Yash Shah. All Rights Reserved.
-            </p>
-        </div>
+    <footer>
+        <p class="footer-text">Yash Shah &copy; 2024</p>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-K+ct7YYC2o36R0eH5Yp6xTJ6k5mExB9i1g/3a0hQgfY=" crossorigin="anonymous"></script>
-    <script src="app.js"></script>
+    <script>
+        // Mobile menu toggle
+        document.getElementById('hamburger').addEventListener('click', function () {
+            const menu = document.querySelector('.menu');
+            menu.classList.toggle('active');
+        });
+
+        // Form validation
+        document.getElementById('contact-form').addEventListener('submit', function (event) {
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+            if (!name || !email || !message) {
+                alert('Please fill out all fields.');
+                event.preventDefault();
+            }
+        });
+    </script>
 </body>
 
 </html>
