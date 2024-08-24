@@ -13,9 +13,9 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Route to serve the index.html
 app.get('/', (req, res) => {
-    res.sendFile('C:\\Users\\yshah12\\Desktop\\portfolio\\index.html');
+    const filePath = path.join(__dirname,  'index.html');
+    res.sendFile(filePath);
 });
 
 // Route to handle email sending
