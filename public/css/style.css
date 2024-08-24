@@ -164,53 +164,69 @@ body {
 }
 
 /* Portfolio section styles */
+/* Portfolio section styles */
 .portfolio {
     padding: 4rem 2rem;
     background-color: #ecf0f1;
 }
 
-.portfolio .portfolio-heading {
+.portfolio-heading {
     text-align: center;
     margin-bottom: 2rem;
 }
 
-.portfolio .portfolio-heading h1 {
+.portfolio-heading h1 {
     font-size: 2.5rem;
     color: #2c3e50;
 }
 
-.port-card {
+.portfolio-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.portfolio-item {
     background: #fff;
-    border: 1px solid #ddd;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    text-align: center;
+    padding: 20px;
     transition: transform 0.3s ease;
 }
 
-.port-card:hover {
+.portfolio-item:hover {
     transform: translateY(-10px);
 }
 
-.port-card .image img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+.portfolio-item img {
+    max-width: 100%;
+    height: auto;
+    border-bottom: 3px solid #3498db;
 }
 
-.port-card .content {
-    padding: 1rem;
-}
-
-.port-card .content h3 {
+.portfolio-item h3 {
+    margin-top: 15px;
     font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    color: #2c3e50;
+    color: #3498db;
 }
 
-.port-card .content p {
+.portfolio-item p {
     font-size: 1rem;
-    color: #7f8c8d;
+    color: #666;
+    margin-top: 10px;
+    line-height: 1.6;
 }
 
 /* Services section styles */
