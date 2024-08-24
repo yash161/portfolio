@@ -2,11 +2,11 @@
     "version": 2,
     "builds": [
       {
-        "src": "/public/css/style.css",
+        "src": "/public/index.html",
         "use": "@vercel/static"
       },
       {
-        "src": "/public/css/style.css",
+        "src": "/public/style.css",
         "use": "@vercel/static"
       }
     ],
