@@ -1,243 +1,344 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Yash Shah Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/responsive.css">
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/responsive.css" />
+  </head>
 
-<body>
+  <body>
     <!-- Navbar header section -->
     <header class="header">
-        <nav class="navbar">
-            <div class="logo">
-                <h2 class="logo-heading">Yash Shah</h2>
-            </div>
-            <div class="hamburger" id="hamburger">
-                <i class="fas fa-bars hamburger-icon"></i>
-                <i class="fas fa-times cross-icon"></i>
-            </div>
-            <div class="menu">
-                <ul class="menu-list">
-                    <li class="menu-list-items"><a class="links" href="#home">Home</a></li>
-                    <li class="menu-list-items"><a class="links" href="#portfolio">Portfolio</a></li>
-                    <li class="menu-list-items"><a class="links" href="#about">About</a></li>
-                    <li class="menu-list-items"><a class="links" href="#services">Services</a></li>
-                    <li class="menu-list-items"><a class="links" href="#contact">Contact Me</a></li>
-                </ul>
-            </div>
-        </nav>
+      <nav class="navbar">
+        <div class="logo">
+          <h2 class="logo-heading">Yash Shah</h2>
+        </div>
+        <div class="hamburger" id="hamburger">
+          <i class="fas fa-bars hamburger-icon"></i>
+          <i class="fas fa-times cross-icon"></i>
+        </div>
+        <div class="menu">
+          <ul class="menu-list">
+            <li class="menu-list-items">
+              <a class="links" href="#home">Home</a>
+            </li>
+            <li class="menu-list-items">
+              <a class="links" href="#portfolio">Portfolio</a>
+            </li>
+            <li class="menu-list-items">
+              <a class="links" href="#about">About</a>
+            </li>
+            <li class="menu-list-items">
+              <a class="links" href="#services">Services</a>
+            </li>
+            <li class="menu-list-items">
+              <a class="links" href="#contact">Contact Me</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
     </header>
 
     <!-- Main hero banner -->
     <section id="home" class="hero">
-        <div class="intro">
-            <div class="headings">
-                <h3 class="greet-heading">Hello, I'm</h3>
-                <h1 class="my-heading">Yash Shah</h1>
-                <h4 class="sub-heading">A DevOps and Cloud Data Engineer with expertise in CI/CD, Kubernetes, and AWS.</h4>
-            </div>
-            <div class="intro-buttons">
-                <br><br><br>
-                <button class="btn common-btn">Hire Me</button>
-                <a href="/public/resume/Yash_Shah_Resume_2024.pdf" class="btn ghost-btn" target="_blank">Get Resume</a>
-            </div>
+      <div class="intro">
+        <div class="headings">
+          <h3 class="greet-heading">Hello, I'm</h3>
+          <h1 class="my-heading">Yash Shah</h1>
+          <h4 class="sub-heading">
+            A DevOps and Cloud Data Engineer with expertise in CI/CD,
+            Kubernetes, and AWS.
+          </h4>
         </div>
+        <div class="intro-buttons">
+          <br />
+          <br />
+          <br />
+          <button class="btn common-btn">Hire Me</button>
+          <a
+            href="resume/Yash_Shah_Resume_2024.pdf"
+            class="btn ghost-btn"
+            target="_blank"
+          >
+            Get Resume
+          </a>
+        </div>
+      </div>
     </section>
 
     <!-- Portfolio Section -->
     <section class="portfolio" id="portfolio">
-        <div class="portfolio-heading">
-            <h1 class="my-heading text-center">Featured Portfolio</h1>
+      <div class="portfolio-heading">
+        <h1 class="my-heading text-center">Featured Portfolio</h1>
+      </div>
+      <div class="portfolio-content">
+        <div class="portfolio-grid">
+          <div class="portfolio-item">
+            <img
+              src="images/Etl.png"
+              alt=" Optimization"
+            />
+            <h3>Dynamic ETL</h3>
+            <p>
+              Built an ETL tool with Python to collect and manage data for
+              tracking trucks and goods...
+            </p>
+          </div>
+          <div class="portfolio-item">
+            <img
+              src="images/Scrapping.jpg"
+              alt="Scraper Optimization"
+            />
+            <h3>Scraper Optimization</h3>
+            <p>
+              Enhancing data retrieval efficiency for Elasticsearch while
+              transitioning to cloud deployment on AWS...
+            </p>
+          </div>
+          <div class="portfolio-item">
+            <img
+              src="images/traffic.jpg"
+              alt="Cloud Traffic Monitor"
+            />
+            <h3>Cloud Traffic Monitor</h3>
+            <p>
+              Built a strong API for tracking traffic with serverless
+              architecture and AWS Code Pipeline for CI/CD...
+            </p>
+          </div>
+          <div class="portfolio-item">
+            <img src="images/gitlab.webp" alt="Gitlab CI/CD" />
+            <h3>Gitlab CI/CD</h3>
+            <p>
+              Modified SaaS application code for faster execution using AWS Step
+              Function and Gitlab CI/CD pipeline...
+            </p>
+          </div>
+          <div class="portfolio-item">
+            <img
+              src="images/social.png"
+              alt="Social Media Details API"
+            />
+            <h3>Social Media Details API</h3>
+            <p>
+              API to fetch details of a particular email and check its social
+              media accounts using Flask and Selenium...
+            </p>
+          </div>
+          <div class="portfolio-item">
+            <img
+              src="images/k8.png"
+              alt="Kubernetes Deployment"
+            />
+            <h3>Kubernetes Deployment</h3>
+            <p>
+              Deployed a Node.js application and a MongoDB application on AWS
+              using Kubernetes and Terraform...
+            </p>
+          </div>
+          <div class="portfolio-item">
+            <img src="./Images/mysql.png" alt="MySQL HA Cluster" />
+            <h3>MySQL HA Cluster</h3>
+            <p>
+              Engineered a robust high availability MySQL cluster with ProxySQL
+              for load balancing and seamless failover...
+            </p>
+          </div>
         </div>
-        <div class="portfolio-content">
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <img src="./Images/scraperOptimization.jpg" alt="Scraper Optimization">
-                    <h3>Dynamic ETL</h3>
-                    <p>Built an ETL tool with Python to collect and manage data for tracking trucks and goods...</p>
-                </div>
-                <div class="portfolio-item">
-                    <img src="./Images/scraperOptimization.jpg" alt="Scraper Optimization">
-                    <h3>Scraper Optimization</h3>
-                    <p>Enhancing data retrieval efficiency for Elasticsearch while transitioning to cloud deployment on AWS...</p>
-                </div>
-                <div class="portfolio-item">
-                    <img src="./Images/cloudTrafficMonitor.jpg" alt="Cloud Traffic Monitor">
-                    <h3>Cloud Traffic Monitor</h3>
-                    <p>Built a strong API for tracking traffic with serverless architecture and AWS Code Pipeline for CI/CD...</p>
-                </div>
-                <div class="portfolio-item">
-                    <img src="./Images/gitlabCICD.jpg" alt="Gitlab CI/CD">
-                    <h3>Gitlab CI/CD</h3>
-                    <p>Modified SaaS application code for faster execution using AWS Step Function and Gitlab CI/CD pipeline...</p>
-                </div>
-                <div class="portfolio-item">
-                    <img src="./Images/socialMediaDetails.jpg" alt="Social Media Details API">
-                    <h3>Social Media Details API</h3>
-                    <p>API to fetch details of a particular email and check its social media accounts using Flask and Selenium...</p>
-                </div>
-                <div class="portfolio-item">
-                    <img src="./Images/kubernetesDeployment.jpg" alt="Kubernetes Deployment">
-                    <h3>Kubernetes Deployment</h3>
-                    <p>Deployed a Node.js application and a MongoDB application on AWS using Kubernetes and Terraform...</p>
-                </div>
-                <div class="portfolio-item">
-                    <img src="./Images/mysqlHACluster.jpg" alt="MySQL HA Cluster">
-                    <h3>MySQL HA Cluster</h3>
-                    <p>Engineered a robust high availability MySQL cluster with ProxySQL for load balancing and seamless failover...</p>
-                </div>
-            </div>
-        </div>
+      </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="about">
-        <div class="about-text">
-            <h1 class="my-heading">About Me</h1>
-            <p class="lead-para">
-                Bachelor of Technology in Computer Science with a strong background in Object Oriented Programming, Databases, Data Structures, and Software Engineering. Experienced in virtualization, microservices, and cloud technologies.
-            </p>
-            <p class="lead-para">
-                Technical Knowledge: GitHub, CI/CD, Kubernetes, AWS, NodeJS, Python, DevOps, Web Automation.
-            </p>
-            <p class="lead-para">
-                Languages & Tech: Docker, Kubernetes, Jenkins, Gitlab, Python, JavaScript, Linux, NodeJS, Express, DBMS, MySQL, MongoDB, HTML, CSS, Java, Selenium, Web Automation.
-            </p>
-        </div>
-        <div class="about-image">
-            <img src="./Images/aboutImage.jpg" alt="About Image">
-        </div>
+      <div class="about-text">
+        <h1 class="my-heading">About Me</h1>
+        <p class="lead-para">
+          Bachelor of Technology in Computer Science with a strong background in
+          Object Oriented Programming, Databases, Data Structures, and Software
+          Engineering. Experienced in virtualization, microservices, and cloud
+          technologies.
+        </p>
+        <p class="lead-para">
+          Technical Knowledge: GitHub, CI/CD, Kubernetes, AWS, NodeJS, Python,
+          DevOps, Web Automation.
+        </p>
+        <p class="lead-para">
+          Languages & Tech: Docker, Kubernetes, Jenkins, Gitlab, Python,
+          JavaScript, Linux, NodeJS, Express, DBMS, MySQL, MongoDB, HTML, CSS,
+          Java, Selenium, Web Automation.
+        </p>
+      </div>
+      <div class="about-image">
+        <img src="./Images/aboutImage.jpg" alt="About Image" />
+      </div>
     </section>
 
     <!-- Services Section -->
     <section class="services" id="services">
-        <div class="services-heading">
-            <h1 class="my-heading text-center">My Services</h1>
-        </div>
-        <div class="services-content">
-            <div class="my-row">
-                <div class="my-col">
-                    <div class="my-card">
-                        <div class="icon">
-                            <i class="fas fa-paint-brush"></i>
-                        </div>
-                        <h3 class="greet-heading blue-text">Web Design</h3>
-                        <p class="small-para">
-                            Creating visually appealing and user-friendly web designs.
-                        </p>
-                    </div>
-                </div>
-                <div class="my-col">
-                    <div class="my-card">
-                        <div class="icon">
-                            <i class="fa-solid fa-code"></i>
-                        </div>
-                        <h3 class="greet-heading blue-text">Web Development</h3>
-                        <p class="small-para">
-                            Developing dynamic and responsive websites.
-                        </p>
-                    </div>
-                </div>
-                <div class="my-col">
-                    <div class="my-card">
-                        <div class="icon">
-                            <i class="fa-brands fa-aws"></i>
-                        </div>
-                        <h3 class="greet-heading blue-text">Cloud Engineering</h3>
-                        <p class="small-para">
-                            Deploying and managing applications in the cloud.
-                        </p>
-                    </div>
-                </div>
-                <div class="my-col">
-                    <div class="my-card">
-                        <div class="icon">
-                            <i class="fa-solid fa-shield"></i>
-                        </div>
-                        <h3 class="greet-heading blue-text">DevOps</h3>
-                        <p class="small-para">
-                            Ensuring smooth and efficient CI/CD processes.
-                        </p>
-                    </div>
-                </div>
+      <div class="services-heading">
+        <h1 class="my-heading text-center">My Services</h1>
+      </div>
+      <div class="services-content">
+        <div class="my-row">
+          <div class="my-col">
+            <div class="my-card">
+              <div class="icon">
+                <i class="fas fa-paint-brush"></i>
+              </div>
+              <h3 class="greet-heading blue-text">Web Design</h3>
+              <p class="small-para">
+                Creating visually appealing and user-friendly web designs.
+              </p>
             </div>
+          </div>
+          <div class="my-col">
+            <div class="my-card">
+              <div class="icon">
+                <i class="fa-solid fa-code"></i>
+              </div>
+              <h3 class="greet-heading blue-text">Web Development</h3>
+              <p class="small-para">
+                Developing dynamic and responsive websites.
+              </p>
+            </div>
+          </div>
+          <div class="my-col">
+            <div class="my-card">
+              <div class="icon">
+                <i class="fa-brands fa-aws"></i>
+              </div>
+              <h3 class="greet-heading blue-text">Cloud Engineering</h3>
+              <p class="small-para">
+                Deploying and managing applications in the cloud.
+              </p>
+            </div>
+          </div>
+          <div class="my-col">
+            <div class="my-card">
+              <div class="icon">
+                <i class="fa-solid fa-shield"></i>
+              </div>
+              <h3 class="greet-heading blue-text">DevOps</h3>
+              <p class="small-para">
+                Ensuring smooth and efficient CI/CD processes.
+              </p>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Contact Section -->
     <section class="contact" id="contact">
-        <div class="contact-heading">
-            <h1 class="my-heading text-center">Contact Me</h1>
+      <div class="contact-heading">
+        <h1 class="my-heading text-center">Contact Me</h1>
+      </div>
+      <div class="contact-content">
+        <form class="form" id="contact-form">
+          <div class="input-row">
+            <input
+              class="input"
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Enter your name"
+              required
+            />
+          </div>
+          <div class="input-row">
+            <input
+              class="input"
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+          <div class="input-row">
+            <textarea
+              class="input"
+              id="message"
+              name="message"
+              placeholder="Enter your message"
+              required
+            ></textarea>
+          </div>
+          <div class="input-row">
+            <input
+              class="input"
+              type="text"
+              id="phone"
+              name="phone"
+              placeholder="Enter your phone number"
+              required
+            />
+          </div>
+          <button class="btn common-btn" type="submit">Send Message</button>
+        </form>
+        <!-- Error message -->
+        <div
+          id="error-message"
+          style="display: none; color: red; margin-top: 20px;"
+        >
+          There was an error sending your message. Please try again later.
         </div>
-        <div class="contact-content">
-            <form class="form" id="contact-form">
-                <div class="input-row">
-                    <input class="input" type="text" id="name" name="name" placeholder="Enter your name" required>
-                </div>
-                <div class="input-row">
-                    <input class="input" type="email" id="email" name="email" placeholder="Enter your email" required>
-                </div>
-                <div class="input-row">
-                    <textarea class="input" id="message" name="message" placeholder="Enter your message" required></textarea>
-                </div>
-                <div class="input-row">
-                    <input class="input" type="text" id="phone" name="phone" placeholder="Enter your phone number" required>
-                </div>
-                <button class="btn common-btn" type="submit">Send Message</button>
-            </form>
-            <!-- Error message -->
-            <div id="error-message" style="display:none; color:red; margin-top: 20px;">
-                There was an error sending your message. Please try again later.
-            </div>
-        </div>
+      </div>
     </section>
 
     <script>
-        document.getElementById('contact-form').addEventListener('submit', async function(event) {
-            event.preventDefault();
+      document
+        .getElementById('contact-form')
+        .addEventListener('submit', async function (event) {
+          event.preventDefault()
 
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const message = document.getElementById('message').value.trim();
+          const name = document.getElementById('name').value.trim()
+          const email = document.getElementById('email').value.trim()
+          const message = document.getElementById('message').value.trim()
 
-            const response = await fetch('/send', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ name, email, message })
-            });
+          const response = await fetch('/send', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name, email, message }),
+          })
 
-            if (response.ok) {
-                alert('Message successfully sent!');
-                document.getElementById('contact-form').reset();
-            } else {
-                document.getElementById('error-message').style.display = 'block';
-            }
-        });
+          if (response.ok) {
+            alert('Message successfully sent!')
+            document.getElementById('contact-form').reset()
+          } else {
+            document.getElementById('error-message').style.display = 'block'
+          }
+        })
 
-        // Mobile menu toggle
-        document.getElementById('hamburger').addEventListener('click', function () {
-            const menu = document.querySelector('.menu');
-            menu.classList.toggle('active');
-        });
+      // Mobile menu toggle
+      document
+        .getElementById('hamburger')
+        .addEventListener('click', function () {
+          const menu = document.querySelector('.menu')
+          menu.classList.toggle('active')
+        })
 
-        // Form validation
-        document.getElementById('contact-form').addEventListener('submit', function (event) {
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const message = document.getElementById('message').value.trim();
-            if (!name || !email || !message) {
-                alert('Please fill out all fields.');
-                event.preventDefault();
-            }
-        });
+      // Form validation
+      document
+        .getElementById('contact-form')
+        .addEventListener('submit', function (event) {
+          const name = document.getElementById('name').value.trim()
+          const email = document.getElementById('email').value.trim()
+          const message = document.getElementById('message').value.trim()
+          if (!name || !email || !message) {
+            alert('Please fill out all fields.')
+            event.preventDefault()
+          }
+        })
     </script>
-</body>
-
+  </body>
 </html>
